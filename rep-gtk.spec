@@ -7,7 +7,7 @@ Group:		Development/Languages
 Group(pl):	Programowanie/Jêzyki
 Source:		ftp://ftp.dcs.warwick.ac.uk/people/John.Harper/librep/%{name}-%{version}.tar.gz
 URL:		http://www.dcs.warwick.ac.uk/~john/sw/rep-gtk.html
-BuildRequires:	librep-devel >= 0.10
+BuildRequires:	librep-devel >= 0.11
 BuildRequires:	gtk+-devel >= 1.2
 BuildRequires:	libglade-devel
 BuildRequires:	gnome-libs-devel
