@@ -109,7 +109,7 @@ Canvas, e a versão GNOME da libglade.
 %patch0 -p1
 
 %build
-autoconf
+%{__autoconf}
 cp -f /usr/share/automake/config.* .
 %configure \
 	--without-static
