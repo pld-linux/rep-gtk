@@ -24,7 +24,7 @@ BuildRequires:	libgnomecanvas-devel >= 2.0.1
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 BuildRequires:	librep-devel >= 0.16
 BuildRequires:	pkgconfig
-%define		repexecdir	%(rep-config --execdir)
+%define		repexecdir	%(rep-config --execdir 2>/dev/null || echo ERROR)
 Requires:	%{repexecdir}
 Requires:	libgnomeui >= 2.3.3.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
