@@ -11,12 +11,13 @@ Group:		Development/Languages
 Source0:	ftp://rep-gtk.sourceforge.net/pub/rep-gtk/%{name}-%{version}.tar.gz
 Patch0:		rep-gdkcolor.patch
 URL:		http://rep-gtk.sourceforge.net/
-BuildRequires:	librep-devel >= 0.13
-BuildRequires:	gtk+-devel >= 1.2
-BuildRequires:	libglade-devel
-BuildRequires:	gnome-libs-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gdk-pixbuf-gnome-devel
+BuildRequires:	gnome-libs-devel
+BuildRequires:	gtk+-devel >= 1.2
+BuildRequires:	libglade-gnome-devel
+BuildRequires:	librep-devel >= 0.13
 %define		repexecdir	%(rep-config --execdir)
 Requires:	%{repexecdir}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -120,14 +121,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf README README.guile-gtk ChangeLog *.defs
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.gz README.guile-gtk.gz ChangeLog.gz *.defs.gz
+%doc README README.guile-gtk ChangeLog g[td]k*.defs
 
 %dir %{repexecdir}/gui
 
@@ -152,7 +151,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files libglade
 %defattr(644,root,root,755)
-%doc libglade.defs.gz examples/test-libglade examples/simple.glade
+%doc libglade.defs examples/test-libglade examples/simple.glade
 %doc examples/rep-ui examples/rep-ui.glade
 %attr(755,root,root) %{repexecdir}/libglade.so
 %attr(755,root,root) %{repexecdir}/libglade.la
@@ -161,7 +160,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files gnome
 %defattr(644,root,root,755)
-%doc examples/gnome-test examples/canvas-test
+%doc examples/gnome-test examples/canvas-test gnome*.defs
 
 %attr(755,root,root) %{repexecdir}/gnome*.so
 %attr(755,root,root) %{repexecdir}/gnome*.la
