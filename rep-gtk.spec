@@ -1,7 +1,9 @@
+%define		repexecdir	%(rep-config --execdir)
+
 Summary:	GTK+ binding for librep Lisp environment
 Name:		rep-gtk
 Version:	0.15
-Release:	4
+Release:	5
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
@@ -14,6 +16,7 @@ BuildRequires:	librep-devel >= 0.13
 BuildRequires:	gtk+-devel >= 1.2
 BuildRequires:	libglade-devel
 BuildRequires:	gnome-libs-devel
+Requires:	%{repexecdir}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}
@@ -63,11 +66,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-ln -sf gtk/gtk.so $RPM_BUILD_ROOT/%{_libexecdir}/rep/%{_host}/gui/gtk.so
-ln -sf gtk/gtk.la $RPM_BUILD_ROOT/%{_libexecdir}/rep/%{_host}/gui/gtk.la
-ln -sf gnome/ui.so $RPM_BUILD_ROOT/%{_libexecdir}/rep/%{_host}/gui/gnome.so
-ln -sf gnome/ui.la $RPM_BUILD_ROOT/%{_libexecdir}/rep/%{_host}/gui/gnome.la
-
 gzip -9nf README README.guile-gtk ChangeLog *.defs
 
 %clean
@@ -77,56 +75,56 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.gz README.guile-gtk.gz ChangeLog.gz *.defs.gz
 
-%dir %{_libexecdir}/rep/%{_host}/gui
+%dir %{repexecdir}/gui
 
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/sgtk-types.so
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/sgtk-types.la
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gtk.so
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gtk.la
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gdk-pixbuf.so
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gdk-pixbuf.la
+%attr(755,root,root) %{repexecdir}/sgtk-types.so
+%attr(755,root,root) %{repexecdir}/sgtk-types.la
+%attr(755,root,root) %{repexecdir}/gtk.so
+%attr(755,root,root) %{repexecdir}/gtk.la
+%attr(755,root,root) %{repexecdir}/gdk-pixbuf.so
+%attr(755,root,root) %{repexecdir}/gdk-pixbuf.la
 
-%dir %{_libexecdir}/rep/%{_host}/gui/gtk
+%dir %{repexecdir}/gui/gtk
 
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gtk.so
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gtk.la
+%attr(755,root,root) %{repexecdir}/gui/gtk.so
+%attr(755,root,root) %{repexecdir}/gui/gtk.la
 
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gtk/gdk-pixbuf.la
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gtk/gdk-pixbuf.so
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gtk/gtk.la
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gtk/gtk.so
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gtk/types.la
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gtk/types.so
+%attr(755,root,root) %{repexecdir}/gui/gtk/gdk-pixbuf.la
+%attr(755,root,root) %{repexecdir}/gui/gtk/gdk-pixbuf.so
+%attr(755,root,root) %{repexecdir}/gui/gtk/gtk.la
+%attr(755,root,root) %{repexecdir}/gui/gtk/gtk.so
+%attr(755,root,root) %{repexecdir}/gui/gtk/types.la
+%attr(755,root,root) %{repexecdir}/gui/gtk/types.so
 
 %files libglade
 %defattr(644,root,root,755)
 %doc libglade.defs.gz examples/test-libglade examples/simple.glade
 %doc examples/rep-ui examples/rep-ui.glade
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/libglade.so
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/libglade.la
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gtk/libglade.la
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gtk/libglade.so
+%attr(755,root,root) %{repexecdir}/libglade.so
+%attr(755,root,root) %{repexecdir}/libglade.la
+%attr(755,root,root) %{repexecdir}/gui/gtk/libglade.la
+%attr(755,root,root) %{repexecdir}/gui/gtk/libglade.so
 
 %files gnome
 %defattr(644,root,root,755)
 %doc examples/gnome-test examples/canvas-test
 
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gnome*.so
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gnome*.la
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/libglade-gnome.so*
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/libglade-gnome.la
+%attr(755,root,root) %{repexecdir}/gnome*.so
+%attr(755,root,root) %{repexecdir}/gnome*.la
+%attr(755,root,root) %{repexecdir}/libglade-gnome.so*
+%attr(755,root,root) %{repexecdir}/libglade-gnome.la
 
-%dir %{_libexecdir}/rep/%{_host}/gui/gnome
+%dir %{repexecdir}/gui/gnome
 
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome.so
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome.la
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome/canvas-pixbuf.la
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome/canvas-pixbuf.so
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome/canvas.la
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome/canvas.so
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome/lib.la
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome/lib.so
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome/libglade.la
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome/libglade.so
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome/ui.la
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome/ui.so
+%attr(755,root,root) %{repexecdir}/gui/gnome.so
+%attr(755,root,root) %{repexecdir}/gui/gnome.la
+%attr(755,root,root) %{repexecdir}/gui/gnome/canvas-pixbuf.la
+%attr(755,root,root) %{repexecdir}/gui/gnome/canvas-pixbuf.so
+%attr(755,root,root) %{repexecdir}/gui/gnome/canvas.la
+%attr(755,root,root) %{repexecdir}/gui/gnome/canvas.so
+%attr(755,root,root) %{repexecdir}/gui/gnome/lib.la
+%attr(755,root,root) %{repexecdir}/gui/gnome/lib.so
+%attr(755,root,root) %{repexecdir}/gui/gnome/libglade.la
+%attr(755,root,root) %{repexecdir}/gui/gnome/libglade.so
+%attr(755,root,root) %{repexecdir}/gui/gnome/ui.la
+%attr(755,root,root) %{repexecdir}/gui/gnome/ui.so
