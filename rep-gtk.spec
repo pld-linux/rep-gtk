@@ -1,7 +1,7 @@
 Summary:	GTK+ binding for librep Lisp environment
 Name:		rep-gtk
 Version:	0.10
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages
 Group(pl):	Programowanie/Jêzyki
@@ -16,9 +16,9 @@ BuildRequires:	gnome-libs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This is a binding of GTK+ for the librep Lisp interpreter. It is based on
-Marius Vollmer's guile-gtk package (initially version 0.15, updated to
-0.17), with a new glue-code generator.
+This is a binding of GTK+ for the librep Lisp interpreter. It is based
+on Marius Vollmer's guile-gtk package (initially version 0.15, updated
+to 0.17), with a new glue-code generator.
 
 %package libglade
 Summary:	librep binding for the libglade library for loading user interfaces
@@ -27,9 +27,10 @@ Group(pl):	Programowanie/Jêzyki
 Requires:	%{name} = %{version}
 
 %description libglade
-This is a binding of libglade for the librep Lisp interpreter. libglade
-allows applications to dynamically load XML descriptions of GTK+ widget
-hierarchies. These hierarchies may be created by the GLADE GUI builder.
+This is a binding of libglade for the librep Lisp interpreter.
+libglade allows applications to dynamically load XML descriptions of
+GTK+ widget hierarchies. These hierarchies may be created by the GLADE
+GUI builder.
 
 %package gnome
 Summary:	GNOME binding for librep
@@ -39,8 +40,8 @@ Requires:	%{name} = %{version}
 
 %description gnome
 This is a binding of the various GNOME libraries for the librep Lisp
-interpreter. It include support for the basic GNOME functions, the GNOME
-user interface widgets, and the GNOME Canvas architecture.
+interpreter. It include support for the basic GNOME functions, the
+GNOME user interface widgets, and the GNOME Canvas architecture.
 
 %prep
 %setup -q
