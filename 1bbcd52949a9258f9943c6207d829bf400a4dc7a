@@ -1,0 +1,7 @@
+- adapter(ized) and partialy rewrited.
+
+* Fri Sep 17 1999 John Harper <john@dcs.warwick.ac.uk>
+- specify installdir when installing
+
+* Tue Sep 14 1999 Aron Griffis <agriffis@bigfoot.com>
+- 0.4 spec file update: added buildroot
