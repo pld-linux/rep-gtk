@@ -6,14 +6,14 @@ Summary(pl):	Interfejs GTK+ do ¶rodowiska Lispa librep
 Summary(pt_BR):	Conjuntos de componentes GTK para o ambiente LISP librep
 Name:		rep-gtk
 Version:	0.16
-Release:	0.%{snap}
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
-Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/rep-gtk/%{name}-%{dsnap}.tar.bz2
+Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/rep-gtk/%{name}-%{version}.tar.bz2
 Patch0:		rep-gdkcolor.patch
 URL:		http://rep-gtk.sourceforge.net/
-BuildRequires:	librep-devel >= 0.15.2.20020611
+BuildRequires:	librep-devel >= 0.16
 BuildRequires:	pkgconfig
 BuildRequires:	glib2-devel >= 2.0.3
 BuildRequires:	gtk+2-devel >= 2.0.3
@@ -109,7 +109,7 @@ gráficos (widgets) da interface de usuário GNOME, a arquitetura GNOME
 Canvas, e a versão GNOME da libglade.
 
 %prep
-%setup -q -n %{name}-%{dsnap}
+%setup -q
 %patch0 -p1
 
 %build
