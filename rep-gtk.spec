@@ -6,7 +6,7 @@ Summary(pl):	Interfejs GTK+ do ¶rodowiska Lispa librep
 Summary(pt_BR):	Conjuntos de componentes GTK para o ambiente LISP librep
 Name:		rep-gtk
 Version:	0.17
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
