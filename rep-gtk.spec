@@ -1,7 +1,7 @@
 Summary:	GTK+ binding for librep Lisp environment
 Name:		rep-gtk
 Version:	0.15
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
@@ -15,6 +15,8 @@ BuildRequires:	gtk+-devel >= 1.2
 BuildRequires:	libglade-devel
 BuildRequires:	gnome-libs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_libexecdir	%{_libdir}
 
 %description
 This is a binding of GTK+ for the librep Lisp interpreter. It is based
