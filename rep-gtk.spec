@@ -1,12 +1,13 @@
 Summary:	GTK+ binding for librep Lisp environment
 Name:		rep-gtk
-Version:	0.9.1
+Version:	0.10
 Release:	1
 License:	GPL
 Group:		Development/Languages
 Group(pl):	Programowanie/Jêzyki
-Source:		ftp://ftp.dcs.warwick.ac.uk/people/John.Harper/librep/%{name}-%{version}.tar.gz
-URL:		http://www.dcs.warwick.ac.uk/~john/sw/rep-gtk.html
+Source0:	ftp://rep-gtk.sourceforge.net/pub/rep-gtk/%{name}-%{version}.tar.gz
+Patch0:		rep-gdkcolor.patch
+URL:		http://rep-gtk.sourceforge.net/
 BuildRequires:	librep-devel >= 0.11
 BuildRequires:	librep-jl >= 0.11
 BuildRequires:	gtk+-devel >= 1.2
@@ -20,7 +21,7 @@ Marius Vollmer's guile-gtk package (initially version 0.15, updated to
 0.17), with a new glue-code generator.
 
 %package libglade
-Summary:	librep binding for the libglade library for loading user interfaces.
+Summary:	librep binding for the libglade library for loading user interfaces
 Group:		Development/Languages
 Group(pl):	Programowanie/Jêzyki
 Requires:	%{name} = %{version}
@@ -32,7 +33,6 @@ hierarchies. These hierarchies may be created by the GLADE GUI builder.
 
 %package gnome
 Summary:	GNOME binding for librep
-Summary:	librep binding for the libglade library for loading user interfaces.
 Group:		Development/Languages
 Group(pl):	Programowanie/Jêzyki
 Requires:	%{name} = %{version}
@@ -44,6 +44,7 @@ user interface widgets, and the GNOME Canvas architecture.
 
 %prep
 %setup -q
+%patch -p1
 
 %build
 LDFLAGS="-s"; export LDFLAGS
