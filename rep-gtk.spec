@@ -7,7 +7,7 @@ Group:		Development/Languages
 Group(pl):	Programowanie/Jêzyki
 Source0:	ftp://rep-gtk.sourceforge.net/pub/rep-gtk/%{name}-%{version}.tar.gz
 Patch0:		rep-gdkcolor.patch
-Patch1:		http://rep-gtk.sourceforge.net/rep-gtk-libglade-0.13.patch
+#Patch1:		http://rep-gtk.sourceforge.net/rep-gtk-libglade-0.13.patch
 URL:		http://rep-gtk.sourceforge.net/
 BuildRequires:	librep-devel >= 0.11
 BuildRequires:	librep-jl >= 0.11
@@ -47,7 +47,7 @@ GNOME user interface widgets, and the GNOME Canvas architecture.
 %prep
 %setup -q
 %patch0 -p1
-%patch1
+#%patch1
 
 %build
 LDFLAGS="-s"; export LDFLAGS
