@@ -143,7 +143,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files libglade
 %defattr(644,root,root,755)
-%doc libglade.defs.gz examples/test-libglade examples/simple.glade
+%doc libglade.defs examples/test-libglade examples/simple.glade
 %doc examples/rep-ui examples/rep-ui.glade
 %attr(755,root,root) %{repexecdir}/gui/gtk-*/libglade.so
 %attr(755,root,root) %{repexecdir}/gui/gtk-*/libglade.la
