@@ -8,8 +8,6 @@ Release:	8
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Source0:	ftp://rep-gtk.sourceforge.net/pub/rep-gtk/%{name}-%{version}.tar.gz
 Patch0:		rep-gdkcolor.patch
 URL:		http://rep-gtk.sourceforge.net/
@@ -51,8 +49,6 @@ Summary(es):	librep binding for the libglade library for loading user interfaces
 Summary(pl):	Interfejs librep do biblioteki libglade
 Summary(pt_BR):	Vínculos librep para a biblioteca libglade para carregamento de interfaces de usuário
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Requires:	%{name} = %{version}
 
 %description libglade
@@ -84,8 +80,6 @@ Summary(es):	GNOME binding for librep
 Summary(pl):	Interfejs GNOME do librep
 Summary(pt_BR):	GNOME binding for librep
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Requires:	%{name} = %{version}
 
 %description gnome
