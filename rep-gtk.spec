@@ -14,10 +14,10 @@ BuildRequires:	librep-devel >= 0.13
 BuildRequires:	gtk+-devel >= 1.2
 BuildRequires:	libglade-devel
 BuildRequires:	gnome-libs-devel
+%define		_libexecdir	%{_libdir}
 Requires:	%{repexecdir}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_libexecdir	%{_libdir}
 %define		repexecdir	%(rep-config --execdir)
 
 %description
