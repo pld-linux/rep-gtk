@@ -1,6 +1,6 @@
 Summary:	GTK+ binding for librep Lisp environment
 Name:		rep-gtk
-Version:	0.8
+Version:	0.9.1
 Release:	1
 License:	GPL
 Group:		Development/Languages
@@ -10,6 +10,7 @@ URL:		http://www.dcs.warwick.ac.uk/~john/sw/rep-gtk.html
 BuildRequires:	librep-devel >= 0.10
 BuildRequires:	gtk+-devel >= 1.2
 BuildRequires:	libglade-devel
+BuildRequires:	gnome-libs-devel
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -27,6 +28,18 @@ Requires:	%{name} = %{version}
 This is a binding of libglade for the librep Lisp interpreter. libglade
 allows applications to dynamically load XML descriptions of GTK+ widget
 hierarchies. These hierarchies may be created by the GLADE GUI builder.
+
+%package gnome
+Summary:	GNOME binding for librep
+Summary:	librep binding for the libglade library for loading user interfaces.
+Group:		Development/Languages
+Group(pl):	Programowanie/Jêzyki
+Requires:	%{name} = %{version}
+
+%description gnome
+This is a binding of the various GNOME libraries for the librep Lisp
+interpreter. It include support for the basic GNOME functions, the GNOME
+user interface widgets, and the GNOME Canvas architecture.
 
 %prep
 %setup -q
@@ -53,12 +66,20 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.gz README.guile-gtk.gz ChangeLog.gz gtk-1.2.defs.gz
 %doc gdk-1.2.defs.gz
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/libgtk.so*
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/libgtk.la
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/sgtk-types.so
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/sgtk-types.la
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gtk.so
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gtk.la
 
 %files libglade
 %defattr(644,root,root,755)
 %doc libglade.defs.gz examples/test-libglade examples/simple.glade
 %doc examples/rep-ui examples/rep-ui.glade
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/liblibglade.so*
-%attr(755,root,root) %{_libexecdir}/rep/%{_host}/liblibglade.la
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/libglade.so
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/libglade.la
+
+%files gnome
+%defattr(644,root,root,755)
+%doc examples/gnome-test examples/canvas-test
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gnome*.so
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gnome*.la
