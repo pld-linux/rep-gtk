@@ -1,6 +1,6 @@
 Summary:	GTK+ binding for librep Lisp environment
 Name:		rep-gtk
-Version:	0.10
+Version:	0.12
 Release:	2
 License:	GPL
 Group:		Development/Languages
