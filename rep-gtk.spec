@@ -12,12 +12,12 @@ Group:		Development/Languages
 Source0:	ftp://rep-gtk.sourceforge.net/pub/rep-gtk/%{name}-%{version}.tar.gz
 Patch0:		rep-gdkcolor.patch
 URL:		http://rep-gtk.sourceforge.net/
-BuildRequires:	librep-devel >= 0.13
-BuildRequires:	gtk+-devel >= 1.2
-BuildRequires:	libglade-devel
-BuildRequires:	gnome-libs-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	gnome-libs-devel
+BuildRequires:	gtk+-devel >= 1.2
+BuildRequires:	libglade-devel
+BuildRequires:	librep-devel >= 0.13
 %define		repexecdir	%(rep-config --execdir)
 Requires:	%{repexecdir}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -112,8 +112,8 @@ Canvas, e a versão GNOME da libglade.
 %patch0 -p1
 
 %build
-autoconf
 cp -f /usr/share/automake/config.* .
+%{__autoconf}
 %configure \
 	--without-static
 %{__make}
@@ -121,16 +121,15 @@ cp -f /usr/share/automake/config.* .
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
-
-gzip -9nf README README.guile-gtk ChangeLog *.defs
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.gz README.guile-gtk.gz ChangeLog.gz *.defs.gz
+%doc README README.guile-gtk ChangeLog *.defs
 
 %dir %{repexecdir}/gui
 
@@ -155,7 +154,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files libglade
 %defattr(644,root,root,755)
-%doc libglade.defs.gz examples/test-libglade examples/simple.glade
+%doc libglade.defs examples/test-libglade examples/simple.glade
 %doc examples/rep-ui examples/rep-ui.glade
 %attr(755,root,root) %{repexecdir}/libglade.so
 %attr(755,root,root) %{repexecdir}/libglade.la
