@@ -59,7 +59,7 @@ Summary(ko):	ªÁøÎ¿⁄ ¿Œ≈Õ∆‰¿ÃΩ∫∏¶ ¿–æÓµÈ¿Ã±‚ ¿ß«— libglade∂Û¿Ã∫Í∑Ø∏Æ¿« librep πŸ¿
 Summary(pl):	Interfejs librep do biblioteki libglade
 Summary(pt_BR):	VÌnculos librep para a biblioteca libglade para carregamento de interfaces de usu·rio
 Group:		Development/Languages
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 
 %description libglade
 This is a binding of libglade for the librep Lisp interpreter.
@@ -91,7 +91,7 @@ Summary(ko):	librep∏¶ ¿ß«— GNOMEπŸ¿Œµ˘
 Summary(pl):	Interfejs GNOME do librep
 Summary(pt_BR):	GNOME binding for librep
 Group:		Development/Languages
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 
 %description gnome
 This is a binding of the various GNOME libraries for the librep Lisp
