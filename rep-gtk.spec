@@ -1,5 +1,3 @@
-%define	dsnap	2002-06-11
-%define snap    %(echo %{dsnap} | sed -e "s#-##g")
 Summary:	GTK+ binding for librep Lisp environment
 Summary(es):	Conjuntos de componentes GTK para el ambiente LISP librep
 Summary(pl):	Interfejs GTK+ do ¶rodowiska Lispa librep
@@ -14,16 +12,11 @@ Source0:	http://unc.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.ta
 #Source0:	ftp://ftp.gnome.org/pub/gnome/sources/rep-gtk/0.16/%{name}-%{version}.tar.bz2
 Patch0:		rep-gdkcolor.patch
 URL:		http://rep-gtk.sourceforge.net/
-BuildRequires:	librep-devel >= 0.16
-BuildRequires:	pkgconfig
-BuildRequires:	glib2-devel >= 2.0.3
-BuildRequires:	gtk+2-devel >= 2.0.3
-BuildRequires:	libglade2-devel >= 2.0.0
-BuildRequires:	libgnome-devel >= 2.0.1
-BuildRequires:	libgnomeui-devel >= 2.0.1
-BuildRequires:	libgnomecanvas-devel >= 2.0.1
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	libgnomeui-devel
+BuildRequires:	librep-devel >= 0.16
+BuildRequires:	pkgconfig
 %define		repexecdir	%(rep-config --execdir)
 Requires:	%{repexecdir}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -138,8 +131,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{repexecdir}/gui/gtk-*
 
 %attr(755,root,root) %{repexecdir}/gui/gtk-*/gtk.so
-%attr(755,root,root) %{repexecdir}/gui/gtk-*/gtk.la
-%attr(755,root,root) %{repexecdir}/gui/gtk-*/types.la
+%{repexecdir}/gui/gtk-*/gtk.la
+%{repexecdir}/gui/gtk-*/types.la
 %attr(755,root,root) %{repexecdir}/gui/gtk-*/types.so
 
 %files libglade
@@ -147,11 +140,11 @@ rm -rf $RPM_BUILD_ROOT
 %doc libglade.defs examples/test-libglade examples/simple.glade
 %doc examples/rep-ui examples/rep-ui.glade
 %attr(755,root,root) %{repexecdir}/gui/gtk-*/libglade.so
-%attr(755,root,root) %{repexecdir}/gui/gtk-*/libglade.la
+%{repexecdir}/gui/gtk-*/libglade.la
 
 %files gnome
 %defattr(644,root,root,755)
 %doc examples/gnome-test examples/canvas-test
 
 %attr(755,root,root) %{repexecdir}/gui/gtk-*/gnome*.so
-%attr(755,root,root) %{repexecdir}/gui/gtk-*/gnome*.la
+%{repexecdir}/gui/gtk-*/gnome*.la
