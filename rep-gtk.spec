@@ -67,8 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README.gz README.guile-gtk.gz ChangeLog.gz gtk-1.2.defs.gz
-%doc gdk-1.2.defs.gz
+%doc README.gz README.guile-gtk.gz ChangeLog.gz *.defs.gz
 
 %dir %{_libexecdir}/rep/%{_host}/gui
 
@@ -82,6 +81,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libexecdir}/rep/%{_host}/gui/gtk
 
 %attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gtk.so
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gtk.la
 
 %attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gtk/gdk-pixbuf.la
 %attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gtk/gdk-pixbuf.so
@@ -111,6 +111,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libexecdir}/rep/%{_host}/gui/gnome
 
 %attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome.so
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome.la
 %attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome/canvas-pixbuf.la
 %attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome/canvas-pixbuf.so
 %attr(755,root,root) %{_libexecdir}/rep/%{_host}/gui/gnome/canvas.la
