@@ -66,12 +66,6 @@ libglade allows applications to dynamically load XML descriptions of
 GTK+ widget hierarchies. These hierarchies may be created by the GLADE
 GUI builder.
 
-%description libglade -l es
-This is a binding of libglade for the librep Lisp interpreter.
-libglade allows applications to dynamically load XML descriptions of
-GTK+ widget hierarchies. These hierarchies may be created by the GLADE
-GUI builder.
-
 %description libglade -l pl
 To jest interfejs libglade do interpretera Lispa librep. libglade
 pozwala aplikacjom dynamicznie wczytywaæ opisy XML hierarchii widgetów
@@ -96,12 +90,6 @@ Requires:	%{name} = %{epoch}:%{version}
 This is a binding of the various GNOME libraries for the librep Lisp
 interpreter. It include support for the basic GNOME functions, the
 GNOME user interface widgets, and the GNOME Canvas architecture.
-
-%description gnome -l es
-This is a binding of the various GNOME libraries for the librep Lisp
-interpreter. It include support for the basic GNOME functions, the
-GNOME user interface widgets, the GNOME Canvas architecture, and the
-GNOME version of libglade.
 
 %description gnome -l pl
 To jest interfejs ró¿nych bibliotek GNOME do interpretera Lispa
