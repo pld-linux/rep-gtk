@@ -1,4 +1,5 @@
 Summary:	GTK+ binding for librep Lisp environment
+Summary(pl):	Interfejs GTK+ do ¶rodowiska Lispa librep
 Name:		rep-gtk
 Version:	0.15
 Release:	6
@@ -14,6 +15,7 @@ BuildRequires:	librep-devel >= 0.13
 BuildRequires:	gtk+-devel >= 1.2
 BuildRequires:	libglade-devel
 BuildRequires:	gnome-libs-devel
+BuildRequires:	autoconf
 %define		repexecdir	%(rep-config --execdir)
 Requires:	%{repexecdir}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -25,8 +27,14 @@ This is a binding of GTK+ for the librep Lisp interpreter. It is based
 on Marius Vollmer's guile-gtk package (initially version 0.15, updated
 to 0.17), with a new glue-code generator.
 
+%description -l pl
+To jest interfejs GTK+ do interpretera Lispa librep. Bazuje na
+pakiecie guile-gtk Mariusa Vollmera (pocz±tkowo wersji 0.15, pó¼niej
+uaktualniono do 0.17) z nowym generatorem kodu.
+
 %package libglade
 Summary:	librep binding for the libglade library for loading user interfaces
+Summary(pl):	Interfejs librep do biblioteki libglade
 Group:		Development/Languages
 Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
@@ -38,8 +46,14 @@ libglade allows applications to dynamically load XML descriptions of
 GTK+ widget hierarchies. These hierarchies may be created by the GLADE
 GUI builder.
 
+%description libglade -l pl
+To jest interfejs libglade do interpretera Lispa librep. libglade
+pozwala aplikacjom dynamicznie wczytywaæ opisy XML hierarchii widgetów
+GTK+.
+
 %package gnome
 Summary:	GNOME binding for librep
+Summary(pl):	Interfejs GNOME do librep
 Group:		Development/Languages
 Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
@@ -49,6 +63,11 @@ Requires:	%{name} = %{version}
 This is a binding of the various GNOME libraries for the librep Lisp
 interpreter. It include support for the basic GNOME functions, the
 GNOME user interface widgets, and the GNOME Canvas architecture.
+
+%description gnome -l pl
+To jest interfejs ró¿nych bibliotek GNOME do interpretera Lispa
+librep. Zawiera wsparcie dla podstawowych funkcji GNOME, widgetów
+interfejsu u¿ytkownika GNOME, architektury GNOME Canvas.
 
 %prep
 %setup -q
