@@ -54,7 +54,7 @@ LDFLAGS="-s"; export LDFLAGS
 autoconf
 %configure \
 	--without-static
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
