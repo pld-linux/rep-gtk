@@ -6,14 +6,14 @@ Summary(ko):	librep Lisp 환경을 위한 GTK+ 바인딩
 Summary(pl):	Interfejs GTK+ do 턳odowiska Lispa librep
 Summary(pt_BR):	Conjuntos de componentes GTK para o ambiente LISP librep
 Name:		rep-gtk
-Version:	0.17
-Release:	3
+Version:	0.18
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
 #Source0:	ftp://ftp.gnome.org/pub/gnome/sources/rep-gtk/0.16/%{name}-%{version}.tar.bz2
 Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	0a7b4589f14ad89360863593f77232cf
+# Source0-md5:	220b0d728656472c068e40823f0a3b22
 Patch0:		rep-gdkcolor.patch
 URL:		http://rep-gtk.sourceforge.net/
 BuildRequires:	autoconf
@@ -22,8 +22,8 @@ BuildRequires:	glib2-devel >= 2.0.3
 BuildRequires:	gtk+2-devel >= 2.0.3
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnome-devel >= 2.0.1
-BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 BuildRequires:	libgnomecanvas-devel >= 2.0.1
+BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 BuildRequires:	librep-devel >= 0.16
 BuildRequires:	pkgconfig
 %define		repexecdir	%(rep-config --execdir)
