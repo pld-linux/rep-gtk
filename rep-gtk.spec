@@ -14,11 +14,11 @@ BuildRequires:	librep-devel >= 0.13
 BuildRequires:	gtk+-devel >= 1.2
 BuildRequires:	libglade-devel
 BuildRequires:	gnome-libs-devel
-%define		_libexecdir	%{_libdir}
+%define		repexecdir	%(rep-config --execdir)
 Requires:	%{repexecdir}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		repexecdir	%(rep-config --execdir)
+%define		_libexecdir	%{_libdir}
 
 %description
 This is a binding of GTK+ for the librep Lisp interpreter. It is based
