@@ -2,6 +2,7 @@
 %define snap    %(echo %{dsnap} | sed -e "s#-##g")
 Summary:	GTK+ binding for librep Lisp environment
 Summary(es):	Conjuntos de componentes GTK para el ambiente LISP librep
+Summary(ko):	librep Lisp »Ø∞Ê¿ª ¿ß«— GTK+ πŸ¿Œµ˘
 Summary(pl):	Interfejs GTK+ do ∂rodowiska Lispa librep
 Summary(pt_BR):	Conjuntos de componentes GTK para o ambiente LISP librep
 Name:		rep-gtk
@@ -53,6 +54,7 @@ cÛdigo intermedi·rio.
 %package libglade
 Summary:	librep binding for the libglade library for loading user interfaces
 Summary(es):	librep binding for the libglade library for loading user interfaces
+Summary(ko):	ªÁøÎ¿⁄ ¿Œ≈Õ∆‰¿ÃΩ∫∏¶ ¿–æÓµÈ¿Ã±‚ ¿ß«— libglade∂Û¿Ã∫Í∑Ø∏Æ¿« librep πŸ¿Œµ˘
 Summary(pl):	Interfejs librep do biblioteki libglade
 Summary(pt_BR):	VÌnculos librep para a biblioteca libglade para carregamento de interfaces de usu·rio
 Group:		Development/Languages
@@ -84,6 +86,7 @@ Essas hierarquias podem ser criadas com o GLADE GUI builder.
 %package gnome
 Summary:	GNOME binding for librep
 Summary(es):	GNOME binding for librep
+Summary(ko):	librep∏¶ ¿ß«— GNOMEπŸ¿Œµ˘
 Summary(pl):	Interfejs GNOME do librep
 Summary(pt_BR):	GNOME binding for librep
 Group:		Development/Languages
