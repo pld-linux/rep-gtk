@@ -7,7 +7,7 @@ Summary(pl):	Interfejs GTK+ do ¶rodowiska Lispa librep
 Summary(pt_BR):	Conjuntos de componentes GTK para o ambiente LISP librep
 Name:		rep-gtk
 Version:	0.17
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
@@ -22,13 +22,13 @@ BuildRequires:	glib2-devel >= 2.0.3
 BuildRequires:	gtk+2-devel >= 2.0.3
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnome-devel >= 2.0.1
-BuildRequires:	libgnomeui-devel >= 2.1.1-3
+BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 BuildRequires:	libgnomecanvas-devel >= 2.0.1
 BuildRequires:	librep-devel >= 0.16
 BuildRequires:	pkgconfig
 %define		repexecdir	%(rep-config --execdir)
 Requires:	%{repexecdir}
-Requires:	libgnomeui >= 2.1.1-3
+Requires:	libgnomeui >= 2.3.3.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}
