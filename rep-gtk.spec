@@ -22,6 +22,7 @@ BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnome-devel >= 2.0.1
 BuildRequires:	libgnomeui-devel >= 2.1.1-3
 BuildRequires:	libgnomecanvas-devel >= 2.0.1
+BuildRequires:	librep-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
 %define		repexecdir	%(rep-config --execdir)
