@@ -5,12 +5,13 @@ Summary(es):	Conjuntos de componentes GTK para el ambiente LISP librep
 Summary(pl):	Interfejs GTK+ do ¶rodowiska Lispa librep
 Summary(pt_BR):	Conjuntos de componentes GTK para o ambiente LISP librep
 Name:		rep-gtk
-Version:	0.16
-Release:	3
+Version:	0.17
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
-Source0:	ftp://ftp.gnome.org/pub/gnome/sources/rep-gtk/0.16/%{name}-%{version}.tar.bz2
+Source0:	http://unc.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
+#Source0:	ftp://ftp.gnome.org/pub/gnome/sources/rep-gtk/0.16/%{name}-%{version}.tar.bz2
 Patch0:		rep-gdkcolor.patch
 URL:		http://rep-gtk.sourceforge.net/
 BuildRequires:	librep-devel >= 0.16
