@@ -1,8 +1,8 @@
 Summary:	GTK+ binding for librep Lisp environment
-Summary(es):	Conjuntos de componentes GTK para el ambiente LISP librep
+Summary(es):	Conjuntos de componentes GTK+ para el ambiente LISP librep
 Summary(ko):	librep Lisp È¯°æÀ» À§ÇÑ GTK+ ¹ÙÀÎµù
 Summary(pl):	Interfejs GTK+ do ¶rodowiska Lispa librep
-Summary(pt_BR):	Conjuntos de componentes GTK para o ambiente LISP librep
+Summary(pt_BR):	Conjuntos de componentes GTK+ para o ambiente LISP librep
 Name:		rep-gtk
 Version:	0.18
 Release:	3
@@ -35,7 +35,7 @@ This is a binding of GTK+ for the librep Lisp interpreter. It is based
 on Marius Vollmer's guile-gtk package with a new glue-code generator.
 
 %description -l es
-Este paquete contiene un conjunto de componentes GTK para el
+Este paquete contiene un conjunto de componentes GTK+ para el
 interpretador LISP librep. Se basa en el paquete guile-gtk, con un
 nuevo generador de código intermediario.
 
@@ -44,7 +44,7 @@ To jest interfejs GTK+ do interpretera Lispa librep. Bazuje na
 pakiecie guile-gtk Mariusa Vollmera z nowym generatorem kodu.
 
 %description -l pt_BR
-Esse pacote contém um conjunto de componentes GTK para o interpretador
+Esse pacote contém um conjunto de componentes GTK+ para o interpretador
 LISP librep. Ele é baseado no pacote guile-gtk, com um novo gerador de
 código intermediário.
 
