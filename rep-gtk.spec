@@ -5,12 +5,11 @@ Summary(pl):	Interfejs GTK+ do ¶rodowiska Lispa librep
 Summary(pt_BR):	Conjuntos de componentes GTK para o ambiente LISP librep
 Name:		rep-gtk
 Version:	0.18
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
-#Source0:	ftp://ftp.gnome.org/pub/gnome/sources/rep-gtk/0.16/%{name}-%{version}.tar.bz2
-Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/rep-gtk/%{name}-%{version}.tar.gz
 # Source0-md5:	220b0d728656472c068e40823f0a3b22
 Patch0:		rep-gdkcolor.patch
 URL:		http://rep-gtk.sourceforge.net/
@@ -106,7 +105,7 @@ Canvas, e a versão GNOME da libglade.
 cp -f /usr/share/automake/config.* .
 %{__autoconf}
 %configure \
-	--without-static \
+	--disable-static \
 	--with-gnome \
 	--with-libglade
 %{__make}
@@ -129,8 +128,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{repexecdir}/gui/gtk-*/gtk.so
 %{repexecdir}/gui/gtk-*/gtk.la
-%{repexecdir}/gui/gtk-*/types.la
 %attr(755,root,root) %{repexecdir}/gui/gtk-*/types.so
+%{repexecdir}/gui/gtk-*/types.la
 
 %files libglade
 %defattr(644,root,root,755)
@@ -142,6 +141,5 @@ rm -rf $RPM_BUILD_ROOT
 %files gnome
 %defattr(644,root,root,755)
 %doc examples/gnome-test examples/canvas-test
-
 %attr(755,root,root) %{repexecdir}/gui/gtk-*/gnome*.so
 %{repexecdir}/gui/gtk-*/gnome*.la
