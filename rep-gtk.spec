@@ -61,8 +61,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-strip --strip-unneeded $RPM_BUILD_ROOT%{_libexecdir}/rep/%{_host}/lib*.so*
-
 gzip -9nf README README.guile-gtk ChangeLog *.defs
 
 %clean
