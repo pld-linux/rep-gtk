@@ -1,23 +1,28 @@
+%define	dsnap	2002-06-11
+%define snap    %(echo %{dsnap} | sed -e "s#-##g")
 Summary:	GTK+ binding for librep Lisp environment
 Summary(es):	Conjuntos de componentes GTK para el ambiente LISP librep
 Summary(pl):	Interfejs GTK+ do ¶rodowiska Lispa librep
 Summary(pt_BR):	Conjuntos de componentes GTK para o ambiente LISP librep
 Name:		rep-gtk
-Version:	0.15
-Release:	8
+Version:	0.16
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
-Source0:	ftp://rep-gtk.sourceforge.net/pub/rep-gtk/%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/rep-gtk/%{name}-%{version}.tar.bz2
 Patch0:		rep-gdkcolor.patch
 URL:		http://rep-gtk.sourceforge.net/
+BuildRequires:	librep-devel >= 0.16
+BuildRequires:	pkgconfig
+BuildRequires:	glib2-devel >= 2.0.3
+BuildRequires:	gtk+2-devel >= 2.0.3
+BuildRequires:	libglade2-devel >= 2.0.0
+BuildRequires:	libgnome-devel >= 2.0.1
+BuildRequires:	libgnomeui-devel >= 2.0.1
+BuildRequires:	libgnomecanvas-devel >= 2.0.1
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gdk-pixbuf-gnome-devel
-BuildRequires:	gnome-libs-devel
-BuildRequires:	gtk+-devel >= 1.2
-BuildRequires:	libglade-gnome-devel
-BuildRequires:	librep-devel >= 0.13
 %define		repexecdir	%(rep-config --execdir)
 Requires:	%{repexecdir}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -26,8 +31,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This is a binding of GTK+ for the librep Lisp interpreter. It is based
-on Marius Vollmer's guile-gtk package (initially version 0.15, updated
-to 0.17), with a new glue-code generator.
+on Marius Vollmer's guile-gtk package with a new glue-code generator.
 
 %description -l es
 Este paquete contiene un conjunto de componentes GTK para el
@@ -36,8 +40,7 @@ nuevo generador de código intermediario.
 
 %description -l pl
 To jest interfejs GTK+ do interpretera Lispa librep. Bazuje na
-pakiecie guile-gtk Mariusa Vollmera (pocz±tkowo wersji 0.15, pó¼niej
-uaktualniono do 0.17) z nowym generatorem kodu.
+pakiecie guile-gtk Mariusa Vollmera z nowym generatorem kodu.
 
 %description -l pt_BR
 Esse pacote contém um conjunto de componentes GTK para o interpretador
@@ -113,7 +116,9 @@ Canvas, e a versão GNOME da libglade.
 %{__autoconf}
 cp -f /usr/share/automake/config.* .
 %configure \
-	--without-static
+	--without-static \
+	--with-gnome \
+	--with-libglade
 %{__make}
 
 %install
@@ -126,58 +131,26 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README README.guile-gtk ChangeLog g[td]k*.defs
+%doc README README.guile-gtk ChangeLog *.defs
 
 %dir %{repexecdir}/gui
+%dir %{repexecdir}/gui/gtk-*
 
-%attr(755,root,root) %{repexecdir}/sgtk-types.so
-%attr(755,root,root) %{repexecdir}/sgtk-types.la
-%attr(755,root,root) %{repexecdir}/gtk.so
-%attr(755,root,root) %{repexecdir}/gtk.la
-%attr(755,root,root) %{repexecdir}/gdk-pixbuf.so
-%attr(755,root,root) %{repexecdir}/gdk-pixbuf.la
-
-%dir %{repexecdir}/gui/gtk
-
-%attr(755,root,root) %{repexecdir}/gui/gtk.so
-%attr(755,root,root) %{repexecdir}/gui/gtk.la
-
-%attr(755,root,root) %{repexecdir}/gui/gtk/gdk-pixbuf.la
-%attr(755,root,root) %{repexecdir}/gui/gtk/gdk-pixbuf.so
-%attr(755,root,root) %{repexecdir}/gui/gtk/gtk.la
-%attr(755,root,root) %{repexecdir}/gui/gtk/gtk.so
-%attr(755,root,root) %{repexecdir}/gui/gtk/types.la
-%attr(755,root,root) %{repexecdir}/gui/gtk/types.so
+%attr(755,root,root) %{repexecdir}/gui/gtk-*/gtk.so
+%attr(755,root,root) %{repexecdir}/gui/gtk-*/gtk.la
+%attr(755,root,root) %{repexecdir}/gui/gtk-*/types.la
+%attr(755,root,root) %{repexecdir}/gui/gtk-*/types.so
 
 %files libglade
 %defattr(644,root,root,755)
-%doc libglade.defs examples/test-libglade examples/simple.glade
+%doc libglade.defs.gz examples/test-libglade examples/simple.glade
 %doc examples/rep-ui examples/rep-ui.glade
-%attr(755,root,root) %{repexecdir}/libglade.so
-%attr(755,root,root) %{repexecdir}/libglade.la
-%attr(755,root,root) %{repexecdir}/gui/gtk/libglade.la
-%attr(755,root,root) %{repexecdir}/gui/gtk/libglade.so
+%attr(755,root,root) %{repexecdir}/gui/gtk-*/libglade.so
+%attr(755,root,root) %{repexecdir}/gui/gtk-*/libglade.la
 
 %files gnome
 %defattr(644,root,root,755)
-%doc examples/gnome-test examples/canvas-test gnome*.defs
+%doc examples/gnome-test examples/canvas-test
 
-%attr(755,root,root) %{repexecdir}/gnome*.so
-%attr(755,root,root) %{repexecdir}/gnome*.la
-%attr(755,root,root) %{repexecdir}/libglade-gnome.so*
-%attr(755,root,root) %{repexecdir}/libglade-gnome.la
-
-%dir %{repexecdir}/gui/gnome
-
-%attr(755,root,root) %{repexecdir}/gui/gnome.so
-%attr(755,root,root) %{repexecdir}/gui/gnome.la
-%attr(755,root,root) %{repexecdir}/gui/gnome/canvas-pixbuf.la
-%attr(755,root,root) %{repexecdir}/gui/gnome/canvas-pixbuf.so
-%attr(755,root,root) %{repexecdir}/gui/gnome/canvas.la
-%attr(755,root,root) %{repexecdir}/gui/gnome/canvas.so
-%attr(755,root,root) %{repexecdir}/gui/gnome/lib.la
-%attr(755,root,root) %{repexecdir}/gui/gnome/lib.so
-%attr(755,root,root) %{repexecdir}/gui/gnome/libglade.la
-%attr(755,root,root) %{repexecdir}/gui/gnome/libglade.so
-%attr(755,root,root) %{repexecdir}/gui/gnome/ui.la
-%attr(755,root,root) %{repexecdir}/gui/gnome/ui.so
+%attr(755,root,root) %{repexecdir}/gui/gtk-*/gnome*.so
+%attr(755,root,root) %{repexecdir}/gui/gtk-*/gnome*.la
