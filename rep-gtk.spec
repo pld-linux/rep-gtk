@@ -4,7 +4,7 @@ Summary(pl):	Interfejs GTK+ do ¶rodowiska Lispa librep
 Summary(pt_BR):	Conjuntos de componentes GTK para o ambiente LISP librep
 Name:		rep-gtk
 Version:	0.15
-Release:	7
+Release:	8
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
@@ -18,6 +18,7 @@ BuildRequires:	gtk+-devel >= 1.2
 BuildRequires:	libglade-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	autoconf
+BuildRequires:	automake
 %define		repexecdir	%(rep-config --execdir)
 Requires:	%{repexecdir}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -115,6 +116,7 @@ Canvas, e a versão GNOME da libglade.
 
 %build
 autoconf
+cp -f /usr/share/automake/config.* .
 %configure \
 	--without-static
 %{__make}
