@@ -12,7 +12,7 @@ BuildRequires:	librep-jl >= 0.11
 BuildRequires:	gtk+-devel >= 1.2
 BuildRequires:	libglade-devel
 BuildRequires:	gnome-libs-devel
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This is a binding of GTK+ for the librep Lisp interpreter. It is based on
