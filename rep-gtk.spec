@@ -139,8 +139,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{repexecdir}/gui/gtk-*
 
 %attr(755,root,root) %{repexecdir}/gui/gtk-*/gtk.so
-%attr(755,root,root) %{repexecdir}/gui/gtk-*/gtk.la
-%attr(755,root,root) %{repexecdir}/gui/gtk-*/types.la
+%{repexecdir}/gui/gtk-*/gtk.la
+%{repexecdir}/gui/gtk-*/types.la
 %attr(755,root,root) %{repexecdir}/gui/gtk-*/types.so
 
 %files libglade
@@ -148,11 +148,11 @@ rm -rf $RPM_BUILD_ROOT
 %doc libglade.defs examples/test-libglade examples/simple.glade
 %doc examples/rep-ui examples/rep-ui.glade
 %attr(755,root,root) %{repexecdir}/gui/gtk-*/libglade.so
-%attr(755,root,root) %{repexecdir}/gui/gtk-*/libglade.la
+%{repexecdir}/gui/gtk-*/libglade.la
 
 %files gnome
 %defattr(644,root,root,755)
 %doc examples/gnome-test examples/canvas-test
 
 %attr(755,root,root) %{repexecdir}/gui/gtk-*/gnome*.so
-%attr(755,root,root) %{repexecdir}/gui/gtk-*/gnome*.la
+%{repexecdir}/gui/gtk-*/gnome*.la
