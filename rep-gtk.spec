@@ -63,10 +63,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-ln -s gtk/gtk.so $RPM_BUILD_ROOT/%{_libexecdir}/rep/%{_host}/gui/gtk.so
-ln -s gtk/gtk.la $RPM_BUILD_ROOT/%{_libexecdir}/rep/%{_host}/gui/gtk.la
-ln -s gnome/ui.so $RPM_BUILD_ROOT/%{_libexecdir}/rep/%{_host}/gui/gnome.so
-ln -s gnome/ui.la $RPM_BUILD_ROOT/%{_libexecdir}/rep/%{_host}/gui/gnome.la
+ln -sf gtk/gtk.so $RPM_BUILD_ROOT/%{_libexecdir}/rep/%{_host}/gui/gtk.so
+ln -sf gtk/gtk.la $RPM_BUILD_ROOT/%{_libexecdir}/rep/%{_host}/gui/gtk.la
+ln -sf gnome/ui.so $RPM_BUILD_ROOT/%{_libexecdir}/rep/%{_host}/gui/gnome.so
+ln -sf gnome/ui.la $RPM_BUILD_ROOT/%{_libexecdir}/rep/%{_host}/gui/gnome.la
 
 gzip -9nf README README.guile-gtk ChangeLog *.defs
 
