@@ -20,13 +20,12 @@ BuildRequires:	glib2-devel >= 2.0.3
 BuildRequires:	gtk+2-devel >= 2.0.3
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnome-devel >= 2.0.1
-BuildRequires:	libgnomeui-devel >= 2.1.1-3
+BuildRequires:	libgnomeui-devel >= 2.0.1
 BuildRequires:	libgnomecanvas-devel >= 2.0.1
 BuildRequires:	autoconf
 BuildRequires:	automake
 %define		repexecdir	%(rep-config --execdir)
 Requires:	%{repexecdir}
-Requires:	libgnomeui >= 2.1.1-3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}
