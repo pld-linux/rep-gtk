@@ -10,7 +10,6 @@ Source0:	ftp://rep-gtk.sourceforge.net/pub/rep-gtk/%{name}-%{version}.tar.gz
 Patch0:		rep-gdkcolor.patch
 URL:		http://rep-gtk.sourceforge.net/
 BuildRequires:	librep-devel >= 0.13
-BuildRequires:	librep-jl >= 0.13
 BuildRequires:	gtk+-devel >= 1.2
 BuildRequires:	libglade-devel
 BuildRequires:	gnome-libs-devel
