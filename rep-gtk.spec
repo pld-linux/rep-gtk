@@ -1,35 +1,64 @@
 Summary:	GTK+ binding for librep Lisp environment
 Name:		rep-gtk
-Version:	0.5
+Version:	0.8
 Release:	1
-Requires:	librep >= 0.4, gtk+ >= 1.2
 License:	GPL
 Group:		Development/Languages
-Source:		ftp.dcs.warwick.ac.uk:/people/John.Harper/librep/rep-gtk-%{ver}.tar.gz
+Group(pl):	Programowanie/Jêzyki
+Source:		ftp://ftp.dcs.warwick.ac.uk/people/John.Harper/librep/%{name}-%{version}.tar.gz
 URL:		http://www.dcs.warwick.ac.uk/~john/sw/rep-gtk.html
+BuildRequires:	librep-devel >= 0.10
+BuildRequires:	gtk+-devel >= 1.2
+BuildRequires:	libglade-devel
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
-This is a binding of GTK+ for the librep Lisp interpreter. It is based
-on Marius Vollmer's guile-gtk package (initially version 0.15, updated
-to 0.16), with a new glue-code generator.
+This is a binding of GTK+ for the librep Lisp interpreter. It is based on
+Marius Vollmer's guile-gtk package (initially version 0.15, updated to
+0.17), with a new glue-code generator.
+
+%package libglade
+Summary:	librep binding for the libglade library for loading user interfaces.
+Group:		Development/Languages
+Group(pl):	Programowanie/Jêzyki
+Requires:	%{name} = %{version}
+
+%description libglade
+This is a binding of libglade for the librep Lisp interpreter. libglade
+allows applications to dynamically load XML descriptions of GTK+ widget
+hierarchies. These hierarchies may be created by the GLADE GUI builder.
 
 %prep
 %setup -q
 
 %build
-./configure --prefix %{_prefix} %{_host}
-make CFLAGS="$RPM_OPT_FLAGS"
+LDFLAGS="-s"; export LDFLAGS
+%configure \
+	--without-static
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make install \
-    installdir=$RPM_BUILD_ROOT%{_prefix}/libexec/rep/%{_host}
+
+make install DESTDIR=$RPM_BUILD_ROOT
+
+strip --strip-unneeded $RPM_BUILD_ROOT%{_libexecdir}/rep/%{_host}/lib*.so*
+
+gzip -9nf README README.guile-gtk ChangeLog *.defs
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%doc README README.guile-gtk ChangeLog gtk-1.2.defs gdk-1.2.defs
-%{_prefix}/libexec/rep/%{_host}/libgtk.so*
-%{_prefix}/libexec/rep/%{_host}/libgtk.la
+%defattr(644,root,root,755)
+%doc README.gz README.guile-gtk.gz ChangeLog.gz gtk-1.2.defs.gz
+%doc gdk-1.2.defs.gz
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/libgtk.so*
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/libgtk.la
+
+%files libglade
+%defattr(644,root,root,755)
+%doc libglade.defs.gz examples/test-libglade examples/simple.glade
+%doc examples/rep-ui examples/rep-ui.glade
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/liblibglade.so*
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/liblibglade.la
