@@ -87,3 +87,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc examples/gnome-test examples/canvas-test
 %attr(755,root,root) %{_libexecdir}/rep/%{_host}/gnome*.so
 %attr(755,root,root) %{_libexecdir}/rep/%{_host}/gnome*.la
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/libglade-gnome.so*
+%attr(755,root,root) %{_libexecdir}/rep/%{_host}/libglade-gnome.la
