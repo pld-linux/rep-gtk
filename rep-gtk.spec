@@ -11,8 +11,9 @@ Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
-Source0:	http://unc.dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
 #Source0:	ftp://ftp.gnome.org/pub/gnome/sources/rep-gtk/0.16/%{name}-%{version}.tar.bz2
+Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	0a7b4589f14ad89360863593f77232cf
 Patch0:		rep-gdkcolor.patch
 URL:		http://rep-gtk.sourceforge.net/
 BuildRequires:	librep-devel >= 0.16
