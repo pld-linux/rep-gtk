@@ -16,17 +16,16 @@ Source0:	http://dl.sourceforge.net/sourceforge/%{name}/%{name}-%{version}.tar.gz
 # Source0-md5:	0a7b4589f14ad89360863593f77232cf
 Patch0:		rep-gdkcolor.patch
 URL:		http://rep-gtk.sourceforge.net/
-BuildRequires:	librep-devel >= 0.16
-BuildRequires:	pkgconfig
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	glib2-devel >= 2.0.3
 BuildRequires:	gtk+2-devel >= 2.0.3
 BuildRequires:	libglade2-devel >= 2.0.0
 BuildRequires:	libgnome-devel >= 2.0.1
 BuildRequires:	libgnomeui-devel >= 2.1.1-3
 BuildRequires:	libgnomecanvas-devel >= 2.0.1
-BuildRequires:	librep-devel
-BuildRequires:	autoconf
-BuildRequires:	automake
+BuildRequires:	librep-devel >= 0.16
+BuildRequires:	pkgconfig
 %define		repexecdir	%(rep-config --execdir)
 Requires:	%{repexecdir}
 Requires:	libgnomeui >= 2.1.1-3
@@ -120,8 +119,8 @@ Canvas, e a versão GNOME da libglade.
 %patch0 -p1
 
 %build
-%{__autoconf}
 cp -f /usr/share/automake/config.* .
+%{__autoconf}
 %configure \
 	--without-static \
 	--with-gnome \
@@ -131,7 +130,8 @@ cp -f /usr/share/automake/config.* .
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
