@@ -1,9 +1,7 @@
-%define		repexecdir	%(rep-config --execdir)
-
 Summary:	GTK+ binding for librep Lisp environment
 Name:		rep-gtk
 Version:	0.15
-Release:	5
+Release:	6
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
@@ -20,6 +18,7 @@ Requires:	%{repexecdir}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_libexecdir	%{_libdir}
+%define		repexecdir	%(rep-config --execdir)
 
 %description
 This is a binding of GTK+ for the librep Lisp interpreter. It is based
