@@ -1,4 +1,4 @@
-%define	dsnap	2002-05-24
+%define	dsnap	2002-06-11
 %define snap    %(echo %{dsnap} | sed -e "s#-##g")
 Summary:	GTK+ binding for librep Lisp environment
 Summary(es):	Conjuntos de componentes GTK para el ambiente LISP librep
@@ -13,11 +13,14 @@ Group:		Development/Languages
 Source0:	ftp://ftp.gnome.org/pub/gnome/pre-gnome2/sources/rep-gtk/%{name}-%{dsnap}.tar.bz2
 Patch0:		rep-gdkcolor.patch
 URL:		http://rep-gtk.sourceforge.net/
-BuildRequires:	librep-devel >= 0.15.2.20020524
+BuildRequires:	librep-devel >= 0.15.2.20020611
 BuildRequires:	pkgconfig
-BuildRequires:	glib2-devel >= 1.3
-BuildRequires:	gtk+2-devel >= 2.0
-BuildRequires:	libglade2-devel >= 1.99
+BuildRequires:	glib2-devel >= 2.0.3
+BuildRequires:	gtk+2-devel >= 2.0.3
+BuildRequires:	libglade2-devel >= 2.0.0
+BuildRequires:	libgnome-devel >= 2.0.1
+BuildRequires:	libgnomeui-devel >= 2.0.1
+BuildRequires:	libgnomecanvas-devel >= 2.0.1
 BuildRequires:	autoconf
 BuildRequires:	automake
 %define		repexecdir	%(rep-config --execdir)
