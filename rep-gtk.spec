@@ -1,4 +1,4 @@
-%define	dsnap	2002-04-19
+%define	dsnap	2002-05-02
 %define snap    %(echo %{dsnap} | sed -e "s#-##g")
 Summary:	GTK+ binding for librep Lisp environment
 Summary(es):	Conjuntos de componentes GTK para el ambiente LISP librep
