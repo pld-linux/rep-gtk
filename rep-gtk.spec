@@ -1,15 +1,16 @@
 Summary:	GTK+ binding for librep Lisp environment
 Name:		rep-gtk
-Version:	0.13a
+Version:	0.14
 Release:	1
 License:	GPL
 Group:		Development/Languages
+Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
 Source0:	ftp://rep-gtk.sourceforge.net/pub/rep-gtk/%{name}-%{version}.tar.gz
 Patch0:		rep-gdkcolor.patch
 URL:		http://rep-gtk.sourceforge.net/
-BuildRequires:	librep-devel >= 0.11
-BuildRequires:	librep-jl >= 0.11
+BuildRequires:	librep-devel >= 0.13
+BuildRequires:	librep-jl >= 0.13
 BuildRequires:	gtk+-devel >= 1.2
 BuildRequires:	libglade-devel
 BuildRequires:	gnome-libs-devel
@@ -23,6 +24,7 @@ to 0.17), with a new glue-code generator.
 %package libglade
 Summary:	librep binding for the libglade library for loading user interfaces
 Group:		Development/Languages
+Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
 Requires:	%{name} = %{version}
 
@@ -35,6 +37,7 @@ GUI builder.
 %package gnome
 Summary:	GNOME binding for librep
 Group:		Development/Languages
+Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
 Requires:	%{name} = %{version}
 
@@ -48,7 +51,6 @@ GNOME user interface widgets, and the GNOME Canvas architecture.
 %patch0 -p1
 
 %build
-LDFLAGS="-s"; export LDFLAGS
 autoconf
 %configure \
 	--without-static
