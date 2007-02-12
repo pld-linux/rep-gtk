@@ -1,8 +1,8 @@
 Summary:	GTK+ binding for librep Lisp environment
-Summary(es.UTF-8):   Conjuntos de componentes GTK+ para el ambiente LISP librep
-Summary(ko.UTF-8):   librep Lisp 환경을 위한 GTK+ 바인딩
-Summary(pl.UTF-8):   Interfejs GTK+ do środowiska Lispa librep
-Summary(pt_BR.UTF-8):   Conjuntos de componentes GTK+ para o ambiente LISP librep
+Summary(es.UTF-8):	Conjuntos de componentes GTK+ para el ambiente LISP librep
+Summary(ko.UTF-8):	librep Lisp 환경을 위한 GTK+ 바인딩
+Summary(pl.UTF-8):	Interfejs GTK+ do środowiska Lispa librep
+Summary(pt_BR.UTF-8):	Conjuntos de componentes GTK+ para o ambiente LISP librep
 Name:		rep-gtk
 Version:	0.18
 Release:	3
@@ -50,9 +50,9 @@ código intermediário.
 
 %package libglade
 Summary:	librep binding for the libglade library for loading user interfaces
-Summary(ko.UTF-8):   사용자 인터페이스를 읽어들이기 위한 libglade라이브러리의 librep 바인딩
-Summary(pl.UTF-8):   Interfejs librep do biblioteki libglade
-Summary(pt_BR.UTF-8):   Vínculos librep para a biblioteca libglade para carregamento de interfaces de usuário
+Summary(ko.UTF-8):	사용자 인터페이스를 읽어들이기 위한 libglade라이브러리의 librep 바인딩
+Summary(pl.UTF-8):	Interfejs librep do biblioteki libglade
+Summary(pt_BR.UTF-8):	Vínculos librep para a biblioteca libglade para carregamento de interfaces de usuário
 Group:		Development/Languages
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -75,9 +75,9 @@ Essas hierarquias podem ser criadas com o GLADE GUI builder.
 
 %package gnome
 Summary:	GNOME binding for librep
-Summary(ko.UTF-8):   librep를 위한 GNOME바인딩
-Summary(pl.UTF-8):   Interfejs GNOME do librep
-Summary(pt_BR.UTF-8):   GNOME binding for librep
+Summary(ko.UTF-8):	librep를 위한 GNOME바인딩
+Summary(pl.UTF-8):	Interfejs GNOME do librep
+Summary(pt_BR.UTF-8):	GNOME binding for librep
 Group:		Development/Languages
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
