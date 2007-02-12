@@ -1,8 +1,8 @@
 Summary:	GTK+ binding for librep Lisp environment
-Summary(es):	Conjuntos de componentes GTK+ para el ambiente LISP librep
-Summary(ko):	librep Lisp È¯°æÀ» À§ÇÑ GTK+ ¹ÙÀÎµù
-Summary(pl):	Interfejs GTK+ do ¶rodowiska Lispa librep
-Summary(pt_BR):	Conjuntos de componentes GTK+ para o ambiente LISP librep
+Summary(es.UTF-8):   Conjuntos de componentes GTK+ para el ambiente LISP librep
+Summary(ko.UTF-8):   librep Lisp í™˜ê²½ì„ ìœ„í•œ GTK+ ë°”ì¸ë”©
+Summary(pl.UTF-8):   Interfejs GTK+ do Å›rodowiska Lispa librep
+Summary(pt_BR.UTF-8):   Conjuntos de componentes GTK+ para o ambiente LISP librep
 Name:		rep-gtk
 Version:	0.18
 Release:	3
@@ -34,25 +34,25 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This is a binding of GTK+ for the librep Lisp interpreter. It is based
 on Marius Vollmer's guile-gtk package with a new glue-code generator.
 
-%description -l es
+%description -l es.UTF-8
 Este paquete contiene un conjunto de componentes GTK+ para el
 interpretador LISP librep. Se basa en el paquete guile-gtk, con un
-nuevo generador de código intermediario.
+nuevo generador de cÃ³digo intermediario.
 
-%description -l pl
+%description -l pl.UTF-8
 To jest interfejs GTK+ do interpretera Lispa librep. Bazuje na
 pakiecie guile-gtk Mariusa Vollmera z nowym generatorem kodu.
 
-%description -l pt_BR
-Esse pacote contém um conjunto de componentes GTK+ para o interpretador
-LISP librep. Ele é baseado no pacote guile-gtk, com um novo gerador de
-código intermediário.
+%description -l pt_BR.UTF-8
+Esse pacote contÃ©m um conjunto de componentes GTK+ para o interpretador
+LISP librep. Ele Ã© baseado no pacote guile-gtk, com um novo gerador de
+cÃ³digo intermediÃ¡rio.
 
 %package libglade
 Summary:	librep binding for the libglade library for loading user interfaces
-Summary(ko):	»ç¿ëÀÚ ÀÎÅÍÆäÀÌ½º¸¦ ÀĞ¾îµéÀÌ±â À§ÇÑ libglade¶óÀÌºê·¯¸®ÀÇ librep ¹ÙÀÎµù
-Summary(pl):	Interfejs librep do biblioteki libglade
-Summary(pt_BR):	Vínculos librep para a biblioteca libglade para carregamento de interfaces de usuário
+Summary(ko.UTF-8):   ì‚¬ìš©ì ì¸í„°í˜ì´ìŠ¤ë¥¼ ì½ì–´ë“¤ì´ê¸° ìœ„í•œ libgladeë¼ì´ë¸ŒëŸ¬ë¦¬ì˜ librep ë°”ì¸ë”©
+Summary(pl.UTF-8):   Interfejs librep do biblioteki libglade
+Summary(pt_BR.UTF-8):   VÃ­nculos librep para a biblioteca libglade para carregamento de interfaces de usuÃ¡rio
 Group:		Development/Languages
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -62,22 +62,22 @@ libglade allows applications to dynamically load XML descriptions of
 GTK+ widget hierarchies. These hierarchies may be created by the GLADE
 GUI builder.
 
-%description libglade -l pl
+%description libglade -l pl.UTF-8
 To jest interfejs libglade do interpretera Lispa librep. libglade
-pozwala aplikacjom dynamicznie wczytywaæ opisy XML hierarchii widgetów
+pozwala aplikacjom dynamicznie wczytywaÄ‡ opisy XML hierarchii widgetÃ³w
 GTK+.
 
-%description libglade -l pt_BR
-Este é um bind da libglade para o interpretador librep Lisp. A
-libglade permite que as aplicações carreguem dinamicamente as
-descrições XML das hierarquias de elementos gráficos (widgets) GTK+.
+%description libglade -l pt_BR.UTF-8
+Este Ã© um bind da libglade para o interpretador librep Lisp. A
+libglade permite que as aplicaÃ§Ãµes carreguem dinamicamente as
+descriÃ§Ãµes XML das hierarquias de elementos grÃ¡ficos (widgets) GTK+.
 Essas hierarquias podem ser criadas com o GLADE GUI builder.
 
 %package gnome
 Summary:	GNOME binding for librep
-Summary(ko):	librep¸¦ À§ÇÑ GNOME¹ÙÀÎµù
-Summary(pl):	Interfejs GNOME do librep
-Summary(pt_BR):	GNOME binding for librep
+Summary(ko.UTF-8):   librepë¥¼ ìœ„í•œ GNOMEë°”ì¸ë”©
+Summary(pl.UTF-8):   Interfejs GNOME do librep
+Summary(pt_BR.UTF-8):   GNOME binding for librep
 Group:		Development/Languages
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 
@@ -86,16 +86,16 @@ This is a binding of the various GNOME libraries for the librep Lisp
 interpreter. It include support for the basic GNOME functions, the
 GNOME user interface widgets, and the GNOME Canvas architecture.
 
-%description gnome -l pl
-To jest interfejs ró¿nych bibliotek GNOME do interpretera Lispa
-librep. Zawiera wsparcie dla podstawowych funkcji GNOME, widgetów
-interfejsu u¿ytkownika GNOME, architektury GNOME Canvas.
+%description gnome -l pl.UTF-8
+To jest interfejs rÃ³Å¼nych bibliotek GNOME do interpretera Lispa
+librep. Zawiera wsparcie dla podstawowych funkcji GNOME, widgetÃ³w
+interfejsu uÅ¼ytkownika GNOME, architektury GNOME Canvas.
 
-%description gnome -l pt_BR
-Este é um bind das várias bibliotecas GNOME para o interpretador
-librep Lisp. Inclui suporte às funções básicas do GNOME, os elementos
-gráficos (widgets) da interface de usuário GNOME, a arquitetura GNOME
-Canvas, e a versão GNOME da libglade.
+%description gnome -l pt_BR.UTF-8
+Este Ã© um bind das vÃ¡rias bibliotecas GNOME para o interpretador
+librep Lisp. Inclui suporte Ã s funÃ§Ãµes bÃ¡sicas do GNOME, os elementos
+grÃ¡ficos (widgets) da interface de usuÃ¡rio GNOME, a arquitetura GNOME
+Canvas, e a versÃ£o GNOME da libglade.
 
 %prep
 %setup -q
