@@ -12,6 +12,8 @@ Group:		Development/Languages
 Source0:	http://dl.sourceforge.net/rep-gtk/%{name}-%{version}.tar.gz
 # Source0-md5:	220b0d728656472c068e40823f0a3b22
 Patch0:		rep-gdkcolor.patch
+Patch1:		%{name}-gtk2.10.patch
+%define		repexecdir	%(rep-config --execdir 2>/dev/null || echo ERROR)
 URL:		http://rep-gtk.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -23,7 +25,6 @@ BuildRequires:	libgnomecanvas-devel >= 2.0.1
 BuildRequires:	libgnomeui-devel >= 2.3.3.1-2
 BuildRequires:	librep-devel >= 0.16
 BuildRequires:	pkgconfig
-%define		repexecdir	%(rep-config --execdir 2>/dev/null || echo ERROR)
 Requires:	%{repexecdir}
 Requires:	libgnomeui >= 2.3.3.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -44,9 +45,9 @@ To jest interfejs GTK+ do interpretera Lispa librep. Bazuje na
 pakiecie guile-gtk Mariusa Vollmera z nowym generatorem kodu.
 
 %description -l pt_BR.UTF-8
-Esse pacote contém um conjunto de componentes GTK+ para o interpretador
-LISP librep. Ele é baseado no pacote guile-gtk, com um novo gerador de
-código intermediário.
+Esse pacote contém um conjunto de componentes GTK+ para o
+interpretador LISP librep. Ele é baseado no pacote guile-gtk, com um
+novo gerador de código intermediário.
 
 %package libglade
 Summary:	librep binding for the libglade library for loading user interfaces
@@ -100,6 +101,7 @@ Canvas, e a versão GNOME da libglade.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.* .
