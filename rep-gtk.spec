@@ -4,16 +4,16 @@ Summary(ko.UTF-8):	librep Lisp 환경을 위한 GTK+ 바인딩
 Summary(pl.UTF-8):	Interfejs GTK+ do środowiska Lispa librep
 Summary(pt_BR.UTF-8):	Conjuntos de componentes GTK+ para o ambiente LISP librep
 Name:		rep-gtk
-Version:	0.18
-Release:	3
+Version:	0.90.6
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
-Source0:	http://dl.sourceforge.net/rep-gtk/%{name}-%{version}.tar.gz
-# Source0-md5:	220b0d728656472c068e40823f0a3b22
+Source0:	http://download.tuxfamily.org/librep/rep-gtk/%{name}-%{version}.tar.xz
+# Source0-md5:	c40b49403d8a912a5261880abc72b9a0
 Patch0:		rep-gdkcolor.patch
 Patch1:		%{name}-gtk2.10.patch
-%define		repexecdir	%(rep-config --execdir 2>/dev/null || echo ERROR)
+%define		repexecdir	%(pkg-config --variable=repexecdir librep 2>/dev/null || echo ERROR)
 URL:		http://rep-gtk.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -98,18 +98,25 @@ librep Lisp. Inclui suporte às funções básicas do GNOME, os elementos
 gráficos (widgets) da interface de usuário GNOME, a arquitetura GNOME
 Canvas, e a versão GNOME da libglade.
 
+%package devel
+Summary:	Development libraries
+Group:		Development/Libraries
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+
+%description devel
+Development libraries for rep-gtk.
+
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+# %patch0 -p1
+# %patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.* .
+%{__aclocal}
 %{__autoconf}
 %configure \
-	--disable-static \
-	--with-gnome \
-	--with-libglade
+	--disable-static
 %{__make}
 
 %install
@@ -130,18 +137,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %attr(755,root,root) %{repexecdir}/gui/gtk-*/gtk.so
 %{repexecdir}/gui/gtk-*/gtk.la
-%attr(755,root,root) %{repexecdir}/gui/gtk-*/types.so
-%{repexecdir}/gui/gtk-*/types.la
 
-%files libglade
+%files devel
 %defattr(644,root,root,755)
-%doc libglade.defs examples/test-libglade examples/simple.glade
-%doc examples/rep-ui examples/rep-ui.glade
-%attr(755,root,root) %{repexecdir}/gui/gtk-*/libglade.so
-%{repexecdir}/gui/gtk-*/libglade.la
-
-%files gnome
-%defattr(644,root,root,755)
-%doc examples/gnome-test examples/canvas-test
-%attr(755,root,root) %{repexecdir}/gui/gtk-*/gnome*.so
-%{repexecdir}/gui/gtk-*/gnome*.la
+%dir %{_includedir}/rep-gtk/rep-gtk.h
+%{_pkgconfigdir}/rep-gtk.pc
+%dir %{repexecdir}/gui
+%dir %{repexecdir}/gui/gtk-2
+%{repexecdir}/gui/gtk-2/gtk.a
