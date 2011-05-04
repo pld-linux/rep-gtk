@@ -5,7 +5,7 @@ Summary(pl.UTF-8):	Interfejs GTK+ do środowiska Lispa librep
 Summary(pt_BR.UTF-8):	Conjuntos de componentes GTK+ para o ambiente LISP librep
 Name:		rep-gtk
 Version:	0.90.6
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Languages
@@ -140,7 +140,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%dir %{_includedir}/rep-gtk/rep-gtk.h
+%dir %{_includedir}/rep-gtk
+%{_includedir}/rep-gtk/rep-gtk.h
 %{_pkgconfigdir}/rep-gtk.pc
 %dir %{repexecdir}/gui
 %dir %{repexecdir}/gui/gtk-2
